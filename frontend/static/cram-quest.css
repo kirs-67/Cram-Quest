@@ -1,0 +1,71 @@
+/* Cram Quest theme. Loaded after style.css, so these rules override the starter. */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Pixelify+Sans:wght@500;700&display=swap");
+
+:root {
+  --canvas: #f2effb;
+  --surface: #ffffff;
+  --ink: #231942;
+  --muted: #655d8a;
+  --line: #ddd6f3;
+  --sidebar: #1f1838;
+  --serif: "Pixelify Sans", "Courier New", monospace;
+  --sans: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --easy: #3f78d6;
+  --medium: #3f9a4f;
+  --boss: #e8741e;
+  --gold: #f4c542;
+  --gold-deep: #7a5a00;
+}
+body.accent-pine { --accent: #4b3b9a; --accent-soft: #e9e4fb; }
+body.accent-blue { --accent: #2b5fa8; --accent-soft: #e3edfb; }
+body.accent-plum { --accent: #8a3d86; --accent-soft: #f5e6f4; }
+body.accent-clay { --accent: #b4521f; --accent-soft: #fbe9dc; }
+
+h1, h2, h3, .brand { font-family: var(--serif); letter-spacing: 0; }
+h1 { font-size: 34px; }
+.brand-mark i { background: var(--gold); }
+.brand-period, .sidebar .nav-count { color: var(--gold); }
+.sidebar { border-right: 4px solid #3b2f6b; }
+.main-nav a.active { box-shadow: inset 4px 0 0 var(--gold); }
+
+/* Subject chips */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 999px;
+  background: var(--surface); border: 2px solid var(--line); font-weight: 700; font-size: 13px; color: var(--ink); }
+.chip span { background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 0 7px; font-size: 12px; }
+.chip:hover { border-color: var(--accent); }
+.chip.selected { background: var(--accent); border-color: var(--accent); color: #fff; }
+.chip.selected span { background: rgba(255,255,255,.22); color: #fff; }
+
+/* Difficulty: left border colour on cards */
+.item-card { border-left: 6px solid var(--easy); }
+.item-card.priority-medium { border-left-color: var(--medium); }
+.item-card.priority-high { border-left-color: var(--boss); }
+.priority-label { font-weight: 700; }
+
+/* Boss battle badge */
+.boss-badge { display: inline-block; margin-left: 8px; padding: 1px 9px; border-radius: 999px;
+  background: var(--boss); color: #2a1200; font-size: 12px; font-weight: 800; white-space: nowrap; }
+
+/* XP bar */
+progress { accent-color: var(--medium); height: 14px; }
+progress::-webkit-progress-bar { background: var(--accent-soft); border-radius: 999px; }
+progress::-webkit-progress-value { background: var(--medium); border-radius: 999px; }
+progress::-moz-progress-bar { background: var(--medium); border-radius: 999px; }
+
+/* Revive Tray: the one memorable element */
+.revive-slot { border: 4px dashed var(--gold); background: #fffbea; border-radius: 10px;
+  box-shadow: 0 0 0 6px rgba(244, 197, 66, .18); }
+.revive-slot h2 { font-size: 26px; color: var(--ink); }
+.revive-slot .eyebrow { color: var(--gold-deep); font-weight: 800; }
+.recovery-card { border-left: 6px solid var(--gold); }
+.recovery-grid .recovery-card:first-child { box-shadow: 0 0 0 3px var(--gold); }
+
+.page-footer { font-size: 13px; }
+
+@media (max-width: 600px) {
+  h1 { font-size: 27px; }
+  .chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; }
+  .chip { white-space: nowrap; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
